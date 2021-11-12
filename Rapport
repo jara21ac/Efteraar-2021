@@ -1,0 +1,30 @@
+1. npm init -y
+2. npm i express(application server) ejs (templating language. login, register etc.)
+3. Development dependencies. npm i --save-dev nodemon(restart server automatically whenever we make changes) 
+
+4. dotenv (invorement variables that we can store inside a doteenv variable)
+
+5. create .env file (for our invorment variables)
+
+6. create .gitignore, we want to ignore these files, dont wanna comit our .env(could contain secret sensitive information)
+, node_modules (all installed dependecies) to our git repository
+
+7. setup package.json, i stedet for test så under script, "devStart": "nodemon server.js"
+
+8. create server.js
+
+9. npm run devStart
+
+10. create folder views, in it create index.ejs
+
+11. create login.ejs and register.ejs in views
+
+12. in server create routes for both
+
+13. Because we're gonna get information from forms, we need to use app.use. use express.urlencoded pass the option extended? as false. We do this because we want to take these forms from email and password and be able to access them inside our request variable inside our post method
+
+14. create local variable to store our data const users = []
+
+15. hash users password, download library for bcrypt, npm i bcrypt, also allows use to compare hash passwords
+
+16. create a new terminal to keep our nodemon running
