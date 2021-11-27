@@ -10,6 +10,7 @@ const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
+const fs = require('fs')
 
 const initializePassport = require('./passport-config')
 initializePassport(
@@ -18,7 +19,11 @@ initializePassport(
     id => users.find(user => user.id === id)
 )
 
-const users = []
+
+//User 
+
+const users = [];
+
 
 //app.set/use
 app.set('views', './views')
@@ -64,6 +69,7 @@ app.delete('/logout', (req, res) => {
     //localhost:3000/ --> delete
 app.delete('/', (req, res) => {
     users.splice(0, users.length);
+    fs.writeFileSync('Profiles/user.json', JSON.stringify(users, null, 2));
     req.logOut()
     res.redirect('/login')
 })
@@ -84,6 +90,7 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
             password: hashedPassword
         })
         res.redirect('/login')
+        fs.writeFileSync('Profiles/user.json', JSON.stringify(users, null, 2));
     } catch {
         res.redirect('/register')
     }
@@ -105,6 +112,7 @@ app.put('/update', async (req, res) => {
         })
         users.splice(0, 1); //I dont know
         res.redirect('/')
+        fs.writeFileSync('Profiles/user.json', JSON.stringify(users, null, 2));
     } catch {
         res.redirect('/update')
     }   
@@ -147,6 +155,8 @@ app.post('/', checkAuthenticated, (req, res) => {
         image: req.body.image
     })
     res.redirect('/product')
+    fs.writeFileSync('Profiles/product.json', JSON.stringify(product, null, 2));
+    console.log(product)
 })
 
 //Update Product
@@ -166,6 +176,7 @@ app.put("/updateProduct", async (req, res) => {
         })
         product.splice(0,1);
         res.redirect("/product")
+        fs.writeFileSync('Profiles/product.json', JSON.stringify(product, null, 2));
     } catch {
         res.redirect("/updateProduct")
     }
@@ -176,6 +187,7 @@ app.put("/updateProduct", async (req, res) => {
 app.delete("/product", (req, res) => {
     product.splice(0, product.length);
     res.redirect("/product")
+    fs.writeFileSync('Profiles/product.json', JSON.stringify(product, null, 2));
     console.log(product);
 })
 
