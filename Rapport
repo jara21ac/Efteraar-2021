@@ -25,6 +25,24 @@
 
 14. create local variable to store our data const users = []
 
-15. hash users password, download library for bcrypt, npm i bcrypt, also allows use to compare hash passwords
+15. hash users password, download library for bcrypt, npm i bcrypt, also allows use to compare hash passwords, include it in const bcrypt = require('bcrypt')
 
 16. create a new terminal to keep our nodemon running
+
+17. hans kommentar til hvorfor vi bruger console.log(users) i vores express ift. database er vigtig, console.log(users). bliver krypteret og sikkert for os at gemme i en database, hver gang vi gemmer bliver den reset til en tom array
+
+18. using passport.js for authentication
+
+19. using npm i passport passport-local(so we only use passport local), allows us to use username and password for logging in. Passport many other logins
+
+20. to store and persist our users across different pages we need to use express-session and to display messages if we fdail to login we need express-flash
+
+21. to make it clearer we're gonna make a new file called, passport-config.js
+
+22. require passport in our server
+
+23. Logout function from passport
+
+24. We cant call a delete function directly from HTML, we need to use a form and a post, but delete is not supported by forms (we can only use post).
+
+25. npm i method-override (allows us to call the delete and put method)

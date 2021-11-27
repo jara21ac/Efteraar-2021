@@ -1,0 +1,21 @@
+<h1>Update Product</h1>
+<form action="/updateProduct?_method=PUT" method="POST">
+    <div>
+        <label for="name">Product Name</label>
+        <input class="updateInfo" type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="description">Category</label>
+        <input class="updateInfo" type="text" id="category" name="category">
+    </div>
+    <div>
+        <label for="price">Price</label>
+        <input class="updateInfo" type="text" id="price" name="price">
+    </div>
+    <div>
+        <label for="img">Image:</label>
+        <input type="file" id="img" name="img">
+    </div>
+    <button type="submit">Update</button>
+</form>
+<a href="/product">Products</a> 

@@ -1,0 +1,32 @@
+<h1>Your Products!</h1>
+<div>
+    <% product.forEach(function(eachCat) { %>
+    <tr>
+        <td> <%= eachCat.name %> </td>
+        <br>
+        <td> <%= eachCat.category %> </td>
+        <br>
+        <td> <%= eachCat.price %> </td>
+        <br>
+        <td> <%= eachCat.image %> </td>
+        <br>
+    </tr>
+    <% }) %>
+</div>
+<a href="/">Profile</a>
+
+<div>
+    <button type="submit">Category</button>
+        <div>
+            <% product.forEach(function(eachCat){ %>
+            <a href="/categoryProduct"><%= eachCat.category %></a>
+            <% }) %>
+        </div>
+</div>
+
+<form action="/product?_method=DELETE" method="POST">
+    <button type="submit">Delete Products</button>
+</form>
+
+<a href="/updateProduct">Update Product</a>
+<a href="/">Create Product</a>
