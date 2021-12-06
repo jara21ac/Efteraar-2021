@@ -1,16 +1,25 @@
-<h1>Login</h1>
+<body style="background-color: burlywood;">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<div class="index-all">
+<h1 class="h1">Login</h1>
 <% if (messages.error) { %>
     <%= messages.error %>
 <% } %>
+<div class="index-small">
 <form action="/login" method="POST">
+    //definere input
     <div>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input class="p-Information" type="email" id="email" name="email" required>
     </div>
     <div>
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <input class="p-Information" type="password" id="password" name="password" required>
     </div>
-    <button type="submit">Login</button>
+    <br>
+    <button class="button" type="submit">Login</button>
 </form>
+</div>
 <a href="/register">Register</a>
+</div>
+</body>

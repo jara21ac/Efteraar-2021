@@ -1,39 +1,54 @@
-<h1>Welcome <%= name %> </h1>
-<header>
-<form action="/logout?_method=DELETE" method="POST">
-    <button type="submit">Log Out</button>
-</form>
-<form action="/update?_method=PUT" method="POST">
-    <button type="submit">Update</button>
-</form>
-<form action="/?_method=DELETE" method="POST">
-    <button type="submit">Delete Profile</button>
-</form action="/product" method=POST>
-</header>
-
-<form action="/" method="POST">
-    <h2>Create Product</h2>
-        <div>
-            <label for="name">Product Name</label>
-            <input class="updateInfo" type="text" id="name" name="name" required>
-        </div>
-        <div>
-            <label for="category">Category</label>
-            <input class="updateInfo" type="text" id="category" name="category" required>
-        </div>
-        <div>
-            <label for="price">Price</label>
-            <input class="updateInfo" type="text" id="price" name="price" required>
-        </div>
-        <div>
-            <label for="img">Image:</label>
-            <input type="file" id="img" name="img" accept="image/*" required>
-        </div>
-        <form action="/product">
-            <button type="submit">Create!</button>
+//Homepage
+//form til at definere input
+//action er den rute vi ændre ved og method er hvilken express type vi bruger
+<html>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<body style="background-color: burlywood;">
+<div class="index-all">
+    <div class="index1">
+        //<% lets your render a variable &>
+    <h1 class="h1">Welcome <%= name %> </h1>
+    <div class="index-small">
+        <br>
+        <header>
+        <form action="/logout?_method=DELETE" method="POST">
+            <button class="button" type="submit">Log Out</button>
         </form>
-        <a href="/product">Your Products</a>
-</form>
+        <form action="/update?_method=PUT" method="POST">
+            <button class="button" type="submit">Update</button>
+        </form>
+        <form action="/?_method=DELETE" method="POST">
+            <button class="button" type="submit">Delete Profile</button>
+        </form action="/product" method=POST>
+        </header>
+    </div class="create-product">
+    <form action="/" method="POST">
+        <h2>Create Product</h2>
+            <div>
+                <label for="name">Product Name</label>
+                <input class="p-Information" type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="category">Category</label>
+                <input class="p-Information" type="text" id="category" name="category" required>
+            </div>
+            <div>
+                <label for="price">Price</label>
+                <input class="p-Information" type="text" id="price" name="price" required>
+            </div>
+            <div>
+                <label for="img">Image:</label>
+                <input type="file" id="img" name="img" accept="image/*" required>
+            </div>
+            <form action="/product">
+                <button class="button" type="submit">Create!</button>
+            </form>
+            <a href="/product">Your Products</a>
+    </form>
+    </div>
+</div>
+</body>
+</html>
 
 
 

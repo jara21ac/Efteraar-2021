@@ -1,21 +1,28 @@
-<h1>Update Product</h1>
+<body style="background-color: burlywood;">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<div class="index-all">
+<h1 class="h1">Update Product</h1>
+<div class="index-small">
 <form action="/updateProduct?_method=PUT" method="POST">
     <div>
         <label for="name">Product Name</label>
-        <input class="updateInfo" type="text" id="name" name="name">
+        <input class="p-Information" type="text" id="name" name="name">
     </div>
     <div>
         <label for="description">Category</label>
-        <input class="updateInfo" type="text" id="category" name="category">
+        <input class="p-Information" type="text" id="category" name="category">
     </div>
     <div>
         <label for="price">Price</label>
-        <input class="updateInfo" type="text" id="price" name="price">
+        <input class="p-Information" type="text" id="price" name="price">
     </div>
     <div>
         <label for="img">Image:</label>
         <input type="file" id="img" name="img">
     </div>
-    <button type="submit">Update</button>
+    <button class="button" type="submit">Update</button>
 </form>
 <a href="/product">Products</a> 
+</div>
+</div>
+</body>

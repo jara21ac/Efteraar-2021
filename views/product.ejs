@@ -1,4 +1,8 @@
-<h1>Your Products!</h1>
+<body style="background-color: burlywood;">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<div class="index-all">
+<h1 class="h1">Your Products!</h1>
+<div class="index-small">
 <div>
     <% product.forEach(function(eachCat) { %>
     <tr>
@@ -12,21 +16,27 @@
         <br>
     </tr>
     <% }) %>
+    <div class="dropdown">
+        <button class="dropbutton">Category</button>
+            <div class="dropdown-content">
+                <% product.forEach(function(eachCat){ %>
+                <a href="#"><%= eachCat.category %></a>
+                <% }) %>
+            </div>
+    </div>
 </div>
-<a href="/">Profile</a>
-
+<br>
+<br>
 <div>
-    <button type="submit">Category</button>
-        <div>
-            <% product.forEach(function(eachCat){ %>
-            <a href="/categoryProduct"><%= eachCat.category %></a>
-            <% }) %>
-        </div>
+<a href="/updateProduct">Update Product</a>
+<br>
+<a href="/">Create Product/Profile</a>
 </div>
 
+<br>
 <form action="/product?_method=DELETE" method="POST">
-    <button type="submit">Delete Products</button>
+    <button class="button" type="submit">Delete Products</button>
 </form>
-
-<a href="/updateProduct">Update Product</a>
-<a href="/">Create Product</a>
+</div>
+</div>
+</body>
